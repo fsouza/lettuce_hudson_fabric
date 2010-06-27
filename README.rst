@@ -13,10 +13,10 @@ The toolbox contains:
 Dependencies
 ------------
 
-To use this project, you need to install the following tools: Fabric, Django, PyCrypto, Nose, NoseDjango and Lettuce.
+To use this project, you need to install the following tools: Fabric, Django, PyCrypto, Nose, NoseDjango, should-dsl, Selenium and Lettuce.
 
 You can install all this stuff with only a simple command: ::
 
-  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce should-dsl
+  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce should-dsl selenium
 
 That will work only if you use PIP. If you don't use PIP (or setuptools), then you will need to install everything manually. So, good luck :)
