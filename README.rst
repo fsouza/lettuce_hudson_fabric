@@ -8,7 +8,8 @@ The toolbox contains:
   #. `Django <http://www.djangoproject.com>`_, a powerful web framework for Python;
   #. `Lettuce <http://lettuce.it>`_, a BDD framework for Python, inspired by Cucumber;
   #. `Fabric <http://fabfile.org>`_, a Python tool for building and deploying applications;
-  #. `Hudson <http://hudson-ci.org>`_, a simple, powerful and extensible continuous integration server.
+  #. `Hudson <http://hudson-ci.org>`_, a simple, powerful and extensible continuous integration server;
+  #. `Selenium <http://seleniumhq.org>`_, an amazing tool for tests.
 
 Dependencies
 ------------
