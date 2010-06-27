@@ -96,5 +96,5 @@ INSTALLED_APPS = (
     'lettuce.django',
     'school',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
 )
