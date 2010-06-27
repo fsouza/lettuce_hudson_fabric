@@ -17,6 +17,6 @@ To use this project, you need to install the following tools: Fabric, Django, Py
 
 You can install all this stuff with only a simple command: ::
 
-  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce
+  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce should-dsl
 
 That will work only if you use PIP. If you don't use PIP (or setuptools), then you will need to install everything manually. So, good luck :)
