@@ -53,3 +53,8 @@ def given_there_is_an_user_group1_with_the_password_group2(step, username, passw
 def when_i_navigate_to_the_new_student_page(step):
     do_login()
     world.browser.get(django_url('school/students/new'))
+
+@step(u'And fill the name field with "(.*)"')
+def and_fill_the_name_field_with_group1(step, name):
+    textfield = world.browser.find_element_by_id('id_student_name')
+    textfield.send_keys(name)
