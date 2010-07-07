@@ -52,4 +52,4 @@ def given_there_is_an_user_group1_with_the_password_group2(step, username, passw
 @step(u'When I navigate to the new student page')
 def when_i_navigate_to_the_new_student_page(step):
     do_login()
-    world.browser.get('/school/students/new')
+    world.browser.get(django_url('school/students/new'))
