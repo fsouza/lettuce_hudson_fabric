@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 from lettuce import before, after, world
-from selenium.firefox.webdriver import WebDriver
+from selenium import get_driver, FIREFOX
 from django.conf import settings
 
 @before.all
 def setup_browser():
-    world.browser = WebDriver()
+    world.browser = get_driver(FIREFOX)
     settings.DEBUG = True
-
-@before.each_step
-def update_dom(step):
-    world.dom = world.browser.get_dom_when_ready()
 
 @after.all
 def teardown_browser(total):
