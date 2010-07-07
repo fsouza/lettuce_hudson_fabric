@@ -14,10 +14,21 @@ The toolbox contains:
 Dependencies
 ------------
 
-To use this project, you need to install the following tools: Fabric, Django, PyCrypto, Nose, NoseDjango, should-dsl, Selenium and Lettuce.
+To use this project, you need to install the following tools: Fabric, Django, PyCrypto, Nose, NoseDjango, should-dsl, Selenium, lxml and Lettuce.
 
-You can install all this stuff with only a simple command: ::
+You can install some of this stuffs with just a simple command: ::
 
-  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce should-dsl selenium
+  $ [sudo] pip install fabric pycrypto django nose nosedjango lettuce should-dsl lxml
 
 That will work only if you use PIP. If you don't use PIP (or setuptools), then you will need to install everything manually. So, good luck :)
+
+Selenium
+--------
+
+I used Selenium with WebDriver, so you need to checkout the Selenium source and build it manually, with the following commands: ::
+
+  $ svn checkout http://selenium.googlecode.com/svn/trunk/ selenium
+  $ cd selenium
+  $ [sudo] python setup.py install
+
+And it works fine :)
