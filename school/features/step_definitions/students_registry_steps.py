@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from lettuce import *
 from lettuce.django import django_url
-
 from django.contrib.auth.models import User
-
 from school.models import Student
+from lxml import html
 
 @before.each_scenario
 def clear_users(scenario):
@@ -19,13 +18,13 @@ def usernamefy(name):
 
 def do_login():
     world.browser.get(django_url('/admin/login/'))
-    dom = world.browser.get_dom()
+    dom = html.fromstring(world.browser.get_page_source())
 
     needs_login = bool(dom.cssselect('body.login,form#login-form,#id_username,#id_password'))
     if needs_login:
-        username = world.browser.find_element_by_selector("#id_username")
-        password = world.browser.find_element_by_selector("#id_password")
-        submit = world.browser.find_element_by_selector("input[value='Log in']")
+        username = world.browser.find_element_by_id("id_username")
+        password = world.browser.find_element_by_id("id_password")
+        submit = world.browser.find_element_by_id("id_login")
 
         first_user = world.users[0]
         username.send_keys(first_user.username)
