@@ -58,3 +58,10 @@ def when_i_navigate_to_the_new_student_page(step):
 def and_fill_the_name_field_with_group1(step, name):
     textfield = world.browser.find_element_by_id('id_name')
     textfield.send_keys(name)
+
+@step(u'And save this student with the code "(.*)"')
+def and_save_this_student_with_the_code_group1(step, student_code):
+    world.student_code = student_code
+    submit_button = world.browser.find_element_by_id('id_submit')
+    submit_button.click()
+
