@@ -3,7 +3,6 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from django.http import HttpResponse
 from forms import StudentForm
 from models import Student
 
@@ -21,4 +20,7 @@ def new_student(request):
 
 def show_student(request, student_id):
     student = Student.objects.get(pk = student_id)
-    return HttpResponse('Hi!')
+    return render_to_response('view_student_details.html', {
+            'student' : student
+        }, context_instance=RequestContext(request)
+    )
