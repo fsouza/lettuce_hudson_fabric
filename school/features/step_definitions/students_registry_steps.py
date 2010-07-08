@@ -25,7 +25,7 @@ def do_login():
     if needs_login:
         username = world.browser.find_element_by_id("id_username")
         password = world.browser.find_element_by_id("id_password")
-        submit = world.browser.find_element_by_id("id_login")
+        submit = world.browser.find_element_by_xpath("//input[@value='Log in']")
 
         first_user = world.users[0]
         username.send_keys(first_user.username)
