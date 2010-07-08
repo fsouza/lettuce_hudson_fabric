@@ -4,6 +4,7 @@ from lettuce.django import django_url
 from django.contrib.auth.models import User
 from school.models import Student
 from lxml import html
+from should_dsl import should
 
 @before.each_scenario
 def clear_users(scenario):
@@ -61,7 +62,12 @@ def and_fill_the_name_field_with_group1(step, name):
 
 @step(u'And save this student with the code "(.*)"')
 def and_save_this_student_with_the_code_group1(step, student_code):
-    world.student_code = student_code
     submit_button = world.browser.find_element_by_id('id_submit')
     submit_button.click()
+
+@step(u'Then I should be redirect to the page of student "(.*)"')
+def then_i_should_be_redirect_to_the_page_of_student_group1(step, student_code):
+    student_code = int(student_code)
+    expected_url = django_url('/school/students/view/%d' %student_code)
+    world.browser.get_current_url() |should| be(expected_url)
 
