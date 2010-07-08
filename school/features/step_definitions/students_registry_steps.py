@@ -71,3 +71,6 @@ def then_i_should_be_redirect_to_the_page_of_student_group1(step, student_code):
     expected_url = django_url('/school/students/view/%d' %student_code)
     world.browser.get_current_url() |should| equal_to(expected_url)
 
+@step(u'And the page title should contains "(.*)"')
+def and_the_page_title_should_contains_group1(step, student_name):
+    world.browser.get_title() |should| include(student_name)
