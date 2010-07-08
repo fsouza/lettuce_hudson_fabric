@@ -56,5 +56,5 @@ def when_i_navigate_to_the_new_student_page(step):
 
 @step(u'And fill the name field with "(.*)"')
 def and_fill_the_name_field_with_group1(step, name):
-    textfield = world.browser.find_element_by_id('id_student_name')
+    textfield = world.browser.find_element_by_id('id_name')
     textfield.send_keys(name)
