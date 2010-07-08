@@ -69,5 +69,5 @@ def and_save_this_student_with_the_code_group1(step, student_code):
 def then_i_should_be_redirect_to_the_page_of_student_group1(step, student_code):
     student_code = int(student_code)
     expected_url = django_url('/school/students/view/%d' %student_code)
-    world.browser.get_current_url() |should| be(expected_url)
+    world.browser.get_current_url() |should| equal_to(expected_url)
 
