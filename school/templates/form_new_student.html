@@ -4,7 +4,10 @@
       <title>New student</title>
     </head>
     <body id="">
-        {{ form.as_p }}
-        <input type="submit" name="submit" value="Go!" id="id_submit"/>
+        <form action="{% url new_students_page %}" method="post" accept-charset="utf-8">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p><input type="submit" name="submit" value="Go!" id="id_submit"/></p>
+        </form>
     </body>
 </html>
