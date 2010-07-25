@@ -23,7 +23,7 @@ def do_login():
 
     needs_login = bool(dom.cssselect('body.login,form#login-form,#id_username,#id_password'))
     if needs_login:
-        username = world.browser.find_element_by_id("id_usernam2e")
+        username = world.browser.find_element_by_id("id_username")
         password = world.browser.find_element_by_id("id_password")
         submit = world.browser.find_element_by_xpath("//input[@value='Log in']")
 
